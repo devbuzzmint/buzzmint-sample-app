@@ -20,7 +20,7 @@ export default function getNFTInfoHandler(req:NextApiRequest, res:NextApiRespons
 }
 
 async function getNFTInfo(props:GetNFTInfoProps) {
-    const response = await axios.get('https://api.assetlayer.com/api/v1/nft/info', { 
+    const response = await axios.get(process.env.ASSETLAYER_URL + '/nft/info', { 
         data: props, 
         headers },
     );

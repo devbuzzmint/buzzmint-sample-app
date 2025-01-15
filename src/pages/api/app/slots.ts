@@ -31,7 +31,7 @@ export default function getSlotsHandler(req:NextApiRequest, res:NextApiResponse)
 
 
 export async function getSlots(props:GetSlotsProps) {
-	const response = await axios.get('https://api.assetlayer.com/api/v1/app/slots', { 
+	const response = await axios.get(process.env.ASSETLAYER_URL + '/app/slots', { 
 		data: props, 
 		headers },
 	);

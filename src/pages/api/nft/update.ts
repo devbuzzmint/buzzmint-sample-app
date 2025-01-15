@@ -24,7 +24,7 @@ export default function getNFTsUserHandler(req:NextApiRequest, res:NextApiRespon
 }
 
 export async function updateNFT(props:UpdateNFTProps) {
-    const response = await axios.put('https://api.assetlayer.com/api/v1/nft/update', 
+    const response = await axios.put(process.env.ASSETLAYER_URL + '/nft/update', 
         props, 
         {headers: headers}
     );

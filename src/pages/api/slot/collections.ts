@@ -26,7 +26,7 @@ export default function getCollectionsHandler(req:NextApiRequest, res:NextApiRes
 }
 
 export async function getCollections(props:GetCollectionsProps) {
-    const response = await axios.get('https://api.assetlayer.com/api/v1/slot/collections', { 
+    const response = await axios.get(process.env.ASSETLAYER_URL + '/slot/collections', { 
         data: props, 
         headers },
     );

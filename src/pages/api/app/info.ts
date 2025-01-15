@@ -31,7 +31,7 @@ export default function getAppHandler(req:NextApiRequest, res:NextApiResponse) {
 
 
 export async function getApp(props:GetAppProps) {
-	const response = await axios.get('https://api.assetlayer.com/api/v1/app/info', { 
+	const response = await axios.get(process.env.ASSETLAYER_URL + '/app/info', { 
 		data: props, 
 		headers },
 	);

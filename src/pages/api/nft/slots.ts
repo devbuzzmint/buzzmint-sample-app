@@ -27,7 +27,7 @@ export default function getNFTsSlotsHandler(req:NextApiRequest, res:NextApiRespo
 }
 
 async function getNFTsSlots(props:GetNFTSlotsProps) {
-    const response = await axios.get('https://api.assetlayer.com/api/v1/nft/slots', { 
+    const response = await axios.get(process.env.ASSETLAYER_URL + '/nft/slots', { 
         data: props, 
         headers },
     );

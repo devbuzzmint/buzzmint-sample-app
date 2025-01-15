@@ -24,7 +24,7 @@ export default function getNFTsUserHandler(req:NextApiRequest, res:NextApiRespon
 }
 
 export async function getNFTsUser(props:GetNFTUserProps) {
-    const response = await axios.get('https://api.assetlayer.com/api/v1/nft/user', { 
+    const response = await axios.get(process.env.ASSETLAYER_URL + '/nft/user', { 
         data: props, 
         headers },
     );

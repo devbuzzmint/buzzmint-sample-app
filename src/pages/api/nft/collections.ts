@@ -27,7 +27,7 @@ export default function getNFTsCollectionsHandler(req:NextApiRequest, res:NextAp
 }
 
 async function getNFTsCollections(props:GetNFTCollectionsProps) {
-    const response = await axios.get('https://api.assetlayer.com/api/v1/nft/collections', { 
+    const response = await axios.get(process.env.ASSETLAYER_URL + '/nft/collections', { 
         data: props, 
         headers },
     );

@@ -26,7 +26,7 @@ export default function getExpressionsHandler(req:NextApiRequest, res:NextApiRes
 
 
 export async function getExpressions(props:GetExpressionSlotProps) {
-	const response = await axios.get('https://api.assetlayer.com/api/v1/expression/slot', { 
+	const response = await axios.get(process.env.ASSETLAYER_URL + '/expression/slot', { 
 		data: props, 
 		headers },
 	);
